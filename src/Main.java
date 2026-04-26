@@ -2,10 +2,22 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        String studentName = "Ashar";
-        System.out.println("Name: " + studentName);
+        String role = "STUDENT";
+        String name = "Ashar";
 
-        studentName = "Zafri";  // birthday — no 'int' keyword this time
-        System.out.println("Name: " + studentName);
+        if (role.equals( "SUPER_ADMIN")){
+            System.out.println("Full system access");
+
+        }else if (role.equals("PROFESSOR")){
+            System.out.println("Grade and student access");
+        } else if (role.equals("STUDENT")) {
+            System.out.println("Own profile access only");
+
+        }else {
+            System.out.println("Unknown role");
+
+        }
     }
 }
+
+
