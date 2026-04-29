@@ -1,4 +1,3 @@
-import java.util.ArrayList;
 import java.util.Scanner;
 
 
@@ -6,7 +5,7 @@ public class Main {
 
     public static void main(String[] args) {
         Scanner scanner=new Scanner(System.in);
-        ArrayList<Student> students=new ArrayList<Student>();
+        StudentManager studentManager=new StudentManager();
 
 
       while(true) {
@@ -17,34 +16,19 @@ public class Main {
           System.out.println("2. View Student");
           System.out.println("3. Exit");
           int choice=scanner.nextInt();
-           if(choice==1) {
-               //asking user to enter Data
-               System.out.println("Enter Student ID");
-               int id=scanner.nextInt();
-               scanner.nextLine(); // add this line to clear the buffer
-               System.out.println("Enter Student first name");
-               String firstname=scanner.nextLine();
-               System.out.println("Enter Student Surname");
-               String lastname=scanner.nextLine();
-               System.out.print("Enter GPA: ");
-               double gpa = scanner.nextDouble();
 
-               //creating a student object from data shared by user
-               Student student = new Student(firstname,lastname,id,gpa);
-               //Adding data to Array list
-               students.add(student);
+
+           if(choice==1) {
+               //Calling methods from StudentManger
+               studentManager.addStudent(scanner);
            }
            else if(choice==2) {
-               //Using size() method to find the total of array Student
-               System.out.println("Total number of students in system: "+students.size());
-
-               for(Student s:students) {
-                   System.out.println(s.getFullName() + " - GPA: " + s.gpa + " - " + s.getStanding());
-               }
+               //Calling methods from StudentManger
+               studentManager.viewStudents();
            }
            // Eixt
           else if(choice==3) {
-              System.out.println("Thank you Good Bye!");
+              studentManager.exit();
               break;
 
           }
