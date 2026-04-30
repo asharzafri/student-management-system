@@ -1,9 +1,14 @@
+import java.util.ArrayList;
+
 public class Student {
     String firstName;
     String lastName;
     int studentId;
     double gpa;
     boolean isEnrolled;
+
+    //Creating a Array for storing grades
+    ArrayList<Grade> grades = new ArrayList<>();
 
     //Constructor
     public Student(String firstName, String lastName, int studentId, double gpa) {
