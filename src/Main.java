@@ -9,6 +9,8 @@ public class Main {
         StudentManager studentManager=new StudentManager();
         //Calling professor manager
         ProfessorManager professorManager=new ProfessorManager();
+        // Calling Grade manager
+        GradeManager gradeManager=new GradeManager();
 
 
 
@@ -20,7 +22,10 @@ public class Main {
           System.out.println("2. View Student");
           System.out.println("3. Add Professors");
           System.out.println("4. View Professors");
-          System.out.println("5. Exit");
+          System.out.println("5. Add Grade");
+          System.out.println("6. View Grade");
+          System.out.println("7. Approve Grade");
+          System.out.println("8. Exit");
           int choice=scanner.nextInt();
 
 
@@ -40,9 +45,22 @@ public class Main {
                //Calling methods from professor manager
                professorManager.viewProfessors();
            }
+           else if(choice==5) {
+               //calling method from Grade manager
+               gradeManager.addGrade(scanner, studentManager.students);
+           }
+           else if(choice==6) {
+               //calling method from Grade manager
+               gradeManager.viewGrades(scanner, studentManager.students);
+           }
+
+           else if(choice==7) {
+               //calling method from Grade manager
+               gradeManager.approveGrade(scanner, studentManager.students);
+           }
 
            // Eixt
-          else if(choice==5) {
+          else if(choice==8) {
               studentManager.exit();
               break;
 
