@@ -61,6 +61,7 @@ public class GradeManager {
                     scanner.nextLine();
                     Grade selected = s.grades.get(choice - 1);
                     selected.isApproved = true;
+                    System.out.println("Grade approved successfully");
 
                 }
             }
