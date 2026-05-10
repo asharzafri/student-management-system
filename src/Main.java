@@ -25,7 +25,8 @@ public class Main {
           System.out.println("5. Add Grade");
           System.out.println("6. View Grade");
           System.out.println("7. Approve Grade");
-          System.out.println("8. Exit");
+          System.out.println("8. View Profile");
+          System.out.println("9. Exit");
           int choice=scanner.nextInt();
 
 
@@ -58,9 +59,13 @@ public class Main {
                //calling method from Grade manager
                gradeManager.approveGrade(scanner, studentManager.students);
            }
+           else if(choice==8) {
+               //calling method from Grade manager
+               studentManager.viewProfile(scanner);
+           }
 
            // Eixt
-          else if(choice==8) {
+          else if(choice==9) {
               studentManager.exit();
               break;
 
